@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="dashboard">
+            <div class ="sidebar">
+                <h3>Event Panel</h3>
+                <ul>
+                     <li><a href="/dashboard">Dashboard</a></li>
+                     <li><a href="/products">Products</a></li>
+                     <li><a href="/cart">Cart</a></li>
+                     <li><a href="#">Orders</a></li>
+                     <li><a href="/login">Logout</a></li>
+       
+                </ul>
+            </div>
+            <div class="main_content">
+
+                <div class="topbar">
+                    <h2>Welcome,User</h2>
+                </div>
+
+                <div class="content_box">
+                    <h3>Dashboard Overview</h3>
+                    <p>This is your Event Management User Dashboard</p>
+
+                    <div class="cards">
+                        <div class="card">
+                            <h4>Available Products</h4>
+                            <p>12</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Your Orders</h4>
+                            <p>3</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Pending Orders</h4>
+                            <p>1</p>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

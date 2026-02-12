@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+
+    <div class="sidebar">
+        <h3>Event Panel</h3>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/">Logout</a></li>
+
+        </ul>
+    </div>
+
+ 
+    <div class="main-content">
+
+        <div class="topbar">
+            <h2>Checkout 💳</h2>
+        </div>
+
+        <div class="checkout-container">
+
+
+            <div class="checkout-card">
+                <h3>Delivery Details</h3>
+
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="Phone Number" required>
+                <textarea placeholder="Delivery Address" rows="3" required></textarea>
+
+                <h3>Payment Method</h3>
+
+                <select>
+                    <option>Cash on Delivery</option>
+                    <option>UPI</option>
+                    <option>Credit/Debit Card</option>
+                </select>
+            </div>
+
+
+            <div class="summary-card">
+    <h3>Order Summary</h3>
+
+    {% for item in items %}
+        <p>{{ item[1] }} × {{ item[3] }} = ₹{{ item[2] * item[3] }}</p>
+    {% endfor %}
+
+    <hr>
+    <h3>Total: ₹{{ total }}</h3>
+
+    <form action="/place_order" method="POST">
+        <button type="submit" class="confirm-btn">
+            Confirm Order
+        </button>
+    </form>
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

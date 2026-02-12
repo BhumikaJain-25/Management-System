@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign_Up</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+<body>
+    <div class="Login_container">
+        <div class="Login_card">
+            <h2>Create Account</h2>
+            <p class="subtitle">Register to continue</p>
+            <form action="/register" method="POST">
+                <input type="text" name="name" placeholder="Enter Full Name" required>
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="password" name="confirm password" placeholder="Confirm Password" required>
+                <p id="error-msg" style="color:red; font-size:13px;"></p>
+
+                
+                <select name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="user">user</option>
+                    <option value="vendor">vendor</option>
+                </select>
+
+                <button type="submit">Sign_Up</button>
+                <p class="link">
+                    Already have an account?
+                    <a href="/login">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

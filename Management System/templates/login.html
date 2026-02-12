@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+
+        <div class="Login_container">
+            <div class="Login_card">
+                <h2>Managment_system</h2>
+                <p class="subtitle">Login to your Account</p>
+                 <form action="/login" method="POST">
+ 
+                     <input type="email" name="email" placeholder="Enter Email" required>
+                     <input type="password" name="password" placeholder="Enter Password" required>
+                     <select name="role" required>
+                         <option value="">Select Role</option>
+                         <option value="user">User</option>
+                         <option value="vendor">Vendor</option>
+                         <option value="admin">Admin</option>
+                     </select>
+     
+                     <button type="submit">Login</button>
+     
+                     <p class="link">
+                         Don't have an account?
+                         <a href="/signup">Signup</a>
+
+                     </p>
+                 </form>
+
+            </div>
+        </div>
+    </body>
+
+
+
+
+</html>
+

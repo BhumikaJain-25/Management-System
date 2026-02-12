@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h3>Vendor Panel</h3>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Add Product</a></li>
+            <li><a href="#">My Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <h2>Welcome Vendor 👋</h2>
+        </div>
+    <div class="vendor-card">
+      <h3>Add New Product</h3>
+
+     <form action="/add_product" method="POST">
+
+        <input type="text" name="name" placeholder="Product Name" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <select name="status">
+            <option value="Available">Available</option>
+            <option value="Out of Stock">Out of Stock</option>
+        </select>
+
+        <button type="submit" class="add-btn">Add Product</button>
+
+     </form>
+    </div>
+
+
+        <div class="vendor-card">
+            <h3>My Products</h3>
+
+            <table class="orders-table">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

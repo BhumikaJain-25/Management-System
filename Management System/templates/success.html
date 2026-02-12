@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="success-container">
+
+    <div class="success-card">
+        <div class="check-icon">✔</div>
+
+        <h2>Order Placed Successfully!</h2>
+        <p>Your order has been confirmed.</p>
+
+        <div class="success-buttons">
+            <a href="/orders">
+                <button class="view-orders-btn">View Orders</button>
+            </a>
+
+            <a href="/dashboard">
+                <button class="back-btn">Back to Dashboard</button>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

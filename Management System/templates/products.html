@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    </head>
+    <body>
+        <div class="Dashboard">
+            <div class="sidebar">
+                <h3>Event Panel</h3>
+                <ul>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/orders">Orders</a></li>
+                    <li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+
+                <div class="topbar">
+                    <h2>Available Products</h2>
+                </div>
+
+                <div class="product-grid">
+
+                   {% for product in products %}
+                    <div class="product-card">
+                       <h3>{{ product[1] }}</h3>
+                       <p>Price: ₹{{ product[2] }}</p>
+                       <p>Quantity: {{ product[3] }}</p>
+                       <p>Status: {{ product[4] }}</p>
+                       <form action="/add_to_cart" method="POST">
+                            <input type="hidden" name="product_id" value="{{ product[0] }}">
+                            <button type="submit">Add to Cart</button>
+                         </form>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

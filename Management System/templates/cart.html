@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h3>Event Panel</h3>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="/login">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <h2>Your Cart 🛒</h2>
+        </div>
+
+        <div class="cart-container">
+
+            <table class="orders-table">
+             <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+             </tr>
+
+             {% for item in items %}
+             <tr>
+                <td>{{ item[1] }}</td>
+                <td>₹{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>₹{{ item[2] * item[3] }}</td>
+             </tr>
+            {% endfor %}
+            </table>
+
+
+            <div class="cart-summary">
+                <h3>Total Amount: ₹{{ total }}</h3>
+               <a href="/checkout">
+            <button class="checkout-btn">Proceed to Checkout</button></a>
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
